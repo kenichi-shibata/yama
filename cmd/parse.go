@@ -47,7 +47,7 @@ func run() {
     return
   }
 
-  yamldata = convert(yamldata)
+  yamldata = Convert(yamldata)
 
   if b, err := json.Marshal(yamldata); err != nil {
       panic(err)
@@ -56,25 +56,6 @@ func run() {
       log.Printf("[DEBUG] %s: %s", Typeof(yamldata), yamldata)
       fmt.Printf("%s is a valid yaml file\n", infile)
     }
-}
-
-// Takes either a  map[string]interface{} or a map[interface{}]interface{}} recursively converts 
-func convert(input interface{}) interface{} {
-  switch x := input.(type) {
-
-    case map[interface{}]interface{}:
-      mappedData := map[string]interface{}{}
-      for key, value := range x {
-        mappedData[key.(string)] = convert(value)
-      }
-      return mappedData
-
-    case  []interface{}:
-      for input, value := range x {
-        x[input] = convert(value)
-      }
-  }
-  return input
 }
 
 func init() {

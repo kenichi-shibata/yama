@@ -3,12 +3,10 @@ package cmd
 import (
   "fmt"
   "log"
-  "os"
   "io/ioutil"
   "encoding/json"
   "gopkg.in/yaml.v2"
   "github.com/spf13/cobra"
-  "github.com/hashicorp/logutils"
 )
 
 var parseCmd = &cobra.Command{
@@ -16,7 +14,7 @@ var parseCmd = &cobra.Command{
   Short: "Parses and checks the yaml file",
   Long: `Parsing should return errors if your yaml file is invalid.`,
   Run: func(cmd *cobra.Command, args []string) {
-    setLog()
+    SetLog()
     if infile != "" {
       log.Print("[DEBUG] Parsing...")
       run()
@@ -56,7 +54,7 @@ func run() {
     } else {
       log.Printf("[VERBOSE] Output: %s\n", b)
       log.Printf("[DEBUG] %s: %s", Typeof(yamldata), yamldata)
-      fmt.Printf("%s is a valid yaml file", infile)
+      fmt.Printf("%s is a valid yaml file\n", infile)
     }
 }
 

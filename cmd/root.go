@@ -2,8 +2,10 @@ package cmd
 
 import (
   "fmt"
+  "log"
   "os"
   "github.com/spf13/cobra"
+  "github.com/hashicorp/logutils"
 )
 
 var (
@@ -25,6 +27,7 @@ var RootCmd = &cobra.Command{
 
   Also add a schema and try to parse?
   `,
+}
   
 func Execute(version string) {
   VERSION = version
@@ -60,7 +63,7 @@ func Typeof(variable interface{}) string {
 func SetLog() {
   filter := &logutils.LevelFilter{
     Levels: []logutils.LogLevel{"DEBUG","VERBOSE", "INFO", "ERROR"},
-    MinLevel: logutils.LogLevel(getLevel()),
+    MinLevel: logutils.LogLevel(GetLevel()),
     Writer: os.Stderr,
   }
   log.SetOutput(filter)

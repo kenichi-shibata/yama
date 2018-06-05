@@ -29,6 +29,7 @@ var (
   debug bool
   quiet bool
   infile string
+  yamldata interface{}
 )
 
 func run() {
@@ -36,11 +37,10 @@ func run() {
   data, err := ioutil.ReadFile(infile)
   
   if err != nil {
-    log.Fatalf("[ERROR] err reading: \n",err)
+    log.Fatal("[ERROR] err reading: \n",err)
   }
 
   log.Printf("[VERBOSE] Input: \n %s", data)
-  var yamldata interface{}
   
   if err := yaml.Unmarshal(data, &yamldata); err != nil {
     log.Fatalf("[ERROR] err unmarshalling: %v\n", err)

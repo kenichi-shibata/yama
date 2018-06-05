@@ -48,7 +48,7 @@ func Convert(input interface{}) interface{} {
       }
       return mappedData
 
-    case  []interface{}:
+    case []interface{}:
       for input, value := range x {
         x[input] = Convert(value)
       }

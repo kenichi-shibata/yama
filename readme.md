@@ -2,7 +2,6 @@ Yama
 ========
 Yet Another Yaml pArser
 
-
 This is a small repo for parsing and merging yaml files
 
 Maybe use yq instead for parsing and merging or appending yaml

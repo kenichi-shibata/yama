@@ -29,6 +29,8 @@ Use yamale schema for Chart
 
 https://github.com/kubernetes/charts/blob/master/test/circle/yaml-schemas/Chart.yaml
 
+Install all these plus the semver tools
 
+https://github.com/kubernetes/charts/blob/master/test/circle/install.sh
 
 

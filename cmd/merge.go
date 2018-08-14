@@ -24,11 +24,11 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
   Run: func(cmd *cobra.Command, args []string) {
     // fmt.Println("Print: " + strings.Join(args, "--"))
-    merge(args)
+    merge(args...)
   },
 }
 
-func merge(f... []string) {
+func merge(f... string) {
   mergee, merger = f[0], f[1]
   mergeeFile, err := ioutil.ReadFile(mergee)
   

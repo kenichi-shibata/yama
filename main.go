@@ -1,6 +1,6 @@
 package main
 
-import "./cmd"
+import "github.com/kenichi-shibata/yama/cmd"
 
 var (
 	VERSION = "0.0.2"

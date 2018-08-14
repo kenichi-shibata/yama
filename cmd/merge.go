@@ -1,11 +1,9 @@
 package cmd
 
 import (
-  "fmt"
   "log"
   "io/ioutil"
   "github.com/spf13/cobra"
-  "strings"
 )
 
 var (

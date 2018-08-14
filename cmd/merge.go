@@ -28,7 +28,7 @@ to quickly create a Cobra application.`,
   },
 }
 
-func merge(f... string) {
+func merge(f... []string) {
   mergee, merger = f[0], f[1]
   mergeeFile, err := ioutil.ReadFile(mergee)
   

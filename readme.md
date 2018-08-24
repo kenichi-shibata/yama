@@ -33,3 +33,7 @@ Install all these plus the semver tools
 https://github.com/kubernetes/charts/blob/master/test/circle/install.sh
 
 
+To build
+=============
+
+`make build`

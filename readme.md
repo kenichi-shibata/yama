@@ -48,7 +48,40 @@ the only difference is if your repo is under `$GOPATH` it will not work
 
 `make build` should also fetch all the dependencies before building the
 binary
+
+Listing all dependencies
+===========================
+
+```
+go list
+``` 
+
+Getting help 
+===============
+
+```
+go help mod
+go help build
+go help list
+go help run
+go help modules
+```
+
 To build
 =============
 
 `make build`
+
+Static analysis for vscode
+==========================
+```
+  gocode
+  gopkgs
+  go-outline
+  go-symbols
+  guru
+  gorename
+  dlv
+  goreturns
+  golint
+```

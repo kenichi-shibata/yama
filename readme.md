@@ -1,6 +1,8 @@
 Yama
-======== 
+========
+
 Yet Another Yaml pArser
+=========================
 
 This is a small repo for parsing and merging yaml files
 
@@ -49,7 +51,54 @@ the only difference is if your repo is under `$GOPATH` it will not work
 
 `make build` should also fetch all the dependencies before building the
 binary
+
+Listing all dependencies
+===========================
+
+```
+go list
+``` 
+
+Getting help 
+===============
+
+```
+go help mod
+go help build
+go help list
+go help run
+go help modules
+```
+
+Use go mod to get dependencies instead of dep this is only available on 1.11
+```
+go mod init
+```
+
+Make sure to get rid `Gopkg.lock` and `Gopkg.toml` and `vendor/`
+
+run `go run main.go` should save all your repos under `$GOPATH/src/mod`
+
+the only difference is if your repo is under `$GOPATH` it will not work
+(recursive reference and all[?])
+
+`make build` should also fetch all the dependencies before building the
+binary
 To build
 =============
 
 `make build`
+
+Static analysis for vscode
+==========================
+```
+  gocode
+  gopkgs
+  go-outline
+  go-symbols
+  guru
+  gorename
+  dlv
+  goreturns
+  golint
+```

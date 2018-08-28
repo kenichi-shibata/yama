@@ -84,6 +84,8 @@ the only difference is if your repo is under `$GOPATH` it will not work
 
 `make build` should also fetch all the dependencies before building the
 binary
+
+
 To build
 =============
 
